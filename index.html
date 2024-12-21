@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Interactive Books</title>
+    <style>
+        @layer utilities {
+            .book-hover:hover .book {
+                transform: translateX(0) rotate(0) !important;
+            }
+            .book-hover .book1 {
+                transform: translateX(160%) rotate(16deg);
+            }
+            .book-hover .book2 {
+                transform: rotate(-16deg);
+                z-index: 2 !important;
+            }
+            .book-hover .book3 {
+                transform: translateX(-160%) rotate(16deg);
+            }
+
+            @media (max-width: 768px) {
+                .book-hover:hover .book1 {
+                    transform: translateY(-50%) !important;
+                }
+                .book-hover:hover .book2 {
+                    transform: translateY(50%) !important;
+                }
+                .book-hover:hover .book3 {
+                    display: none !important;
+                }
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-300 min-h-screen flex items-center justify-center">
+    <div class="relative max-w-3xl w-full mx-auto flex items-center justify-center flex-wrap min-h-screen">
+        <div class="relative max-w-2xl w-full h-[400px] flex items-center justify-between book-hover">
+            <div class="book book1 relative flex items-center justify-center w-36 h-48 bg-black border-2 border-white rounded-md shadow-lg transition-transform duration-300">
+                <p class="text-white text-2xl ">Card Hover</p>
+            </div>
+            <div class="book book2 relative flex items-center justify-center w-36 h-48 bg-black border-2 border-white rounded-md shadow-lg transition-transform duration-300">
+                <p class="text-white text-2xl ">Card Hover</p>
+            </div>
+            <div class="book book3 relative flex items-center justify-center w-36 h-48 bg-black border-2 border-white rounded-md shadow-lg transition-transform duration-300">
+                <p class="text-white text-2xl ">Card Hover</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
