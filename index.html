@@ -1,53 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-                @layer utilities {
+        @layer utilities {
             .book-hover:hover .book {
                 transform: translateX(0) rotate(0) !important;
                 z-index: 2 !important;
             }
+
             .book-hover .book1 {
                 transform: translateX(160%) rotate(16deg);
             }
+
             .book-hover .book2 {
                 z-index: 2 !important;
             }
+
             .book-hover .book3 {
                 transform: translateX(-160%) rotate(16deg);
             }
 
-            @media (max-width: 768px) {
+            @media (max-width: 992px) {
+                .book-hover .book3 {
+                    transform: translateX(0%) translateY(-70%) rotate(200deg);
+                }
+
+                .book-hover .book1 {
+                    transform: translateX(0%) translateY(70%) rotate(200deg);
+                }
+
                 .book-hover:hover .book1 {
-                    transform: translateY(-50%) !important;
+                    transform: translateX(-60%) translateY(0%) !important;
                 }
-                .book-hover:hover .book2 {
-                    transform: translateY(50%) !important;
-                }
+
                 .book-hover:hover .book3 {
-                    display: none !important;
+                    transform: translateX(60%) translateY(0%) !important;
                 }
             }
         }
     </style>
 </head>
+
 <body>
-     <div class="relative max-w-3xl w-full mx-auto flex items-center justify-center flex-wrap min-h-screen">
-        <div class="relative w-[590px] border border-solid border-black p-6 cursor-pointer flex items-center justify-between transition-all rounded-2xl ease-linear duration-200 hover:shadow-2xl book-hover">
-            <div class="book flex items-center justify-center book1 relative w-36 h-48 bg-black border-2 border-white rounded-md shadow-lg transition-transform duration-300">
+    <div class="relative max-w-3xl w-full mx-auto flex items-center justify-center flex-wrap min-h-screen max-lg:px-5">
+        <div
+            class="relative w-[590px] border border-solid border-black p-6 cursor-pointer flex max-lg:flex-col items-center justify-between transition-all rounded-2xl ease-linear duration-200 hover:shadow-2xl book-hover">
+            <div
+                class="book flex items-center justify-center book1 relative w-36 h-48 bg-black border-2 border-white rounded-md shadow-lg transition-transform duration-300">
                 <p class="text-2xl font-bold text-white">Card</p>
             </div>
-            <div class="book flex items-center justify-center book2 relative w-36 h-48 bg-black border-2 border-white rounded-md shadow-lg transition-transform duration-300">
+            <div
+                class="book flex items-center justify-center book2 relative w-36 h-48 bg-black border-2 border-white rounded-md shadow-lg transition-transform duration-300">
                 <p class="text-2xl font-bold text-white">Card Hover</p>
             </div>
-            <div class="book flex items-center justify-center book3 relative w-36 h-48 bg-black border-2 border-white rounded-md shadow-lg transition-transform duration-300">
+            <div
+                class="book flex items-center justify-center book3 relative w-36 h-48 bg-black border-2 border-white rounded-md shadow-lg transition-transform duration-300">
                 <p class="text-2xl font-bold text-white">Card</p>
             </div>
         </div>
     </div>
 </body>
+
 </html>
