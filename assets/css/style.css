@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.card-img:has(+ .card-img:hover) {
+    filter: brightness(0.3);
+    transform: translateZ(50px) rotatey(20deg);
+}
+
+.card-img:has(+ .card-img + .card-img:hover) {
+    filter: brightness(0.2);
+    transform: translateZ(30px) rotatey(10deg);
+}
+
+.card-img:hover+.card-img {
+    filter: brightness(0.3);
+    transform: translateZ(50px) rotatey(-20deg);
+}
+
+.card-img:hover+.card-img+.card-img {
+    filter: brightness(0.2);
+    transform: translateZ(30px) rotatey(-10deg);
+}
